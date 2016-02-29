@@ -13,6 +13,7 @@ void setup ()
     Interactive.make( this );
     
     //your code to declare and initialize buttons goes here
+    buttons = new MSButton[NUM_ROWS][NUM_COLS];
     for(int y=0; y<NUM_ROWS; y++ ){
       for(int x=0; x<NUM_COLS; x++){
         buttons[y][x] = new MSButton(y,x);
