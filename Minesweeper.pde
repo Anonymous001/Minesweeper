@@ -82,6 +82,9 @@ public class MSButton
     {
         clicked = true;
         //your code here
+        if(keyPressed==true){marked=true;}
+        else if(bombs.contains(this)){displayLosingMessage();}
+        else if(countBombs(r,c)>0){label = countBombs(r,c);}
     }
 
     public void draw () 
@@ -106,12 +109,21 @@ public class MSButton
     public boolean isValid(int r, int c)
     {
         //your code here
-        return false;
+        if(r>0 && r<10 && c>0 && c<10){return true;}
+        else{return false;}
     }
     public int countBombs(int row, int col)
     {
         int numBombs = 0;
         //your code here
+        if(isValid(row+1,col) && bombs.contains(buttons[row+1][col])){ numBombs +=1;}
+        if(isValid(row-1,col) && bombs.contains(buttons[row-1][col])){ numBombs +=1;}
+        if(isValid(row,col-1) && bombs.contains(buttons[row][col-1])){ numBombs +=1;}
+        if(isValid(row,col+1) && bombs.contains(buttons[row][col+1])){ numBombs +=1;}
+        if(isValid(row+1,col+1) && bombs.contains(buttons[row+1][col+1])){ numBombs +=1;}
+        if(isValid(row-1,col-1) && bombs.contains(buttons[row-1][col-1])){ numBombs +=1;}
+        if(isValid(row+1,col-1) && bombs.contains(buttons[row+1][col-1])){ numBombs +=1;}
+        if(isValid(row-1,col+1) && bombs.contains(buttons[row-1][col+1])){ numBombs +=1;}
         return numBombs;
     }
 }
