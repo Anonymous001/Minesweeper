@@ -45,6 +45,7 @@ public boolean isWon()
 public void displayLosingMessage()
 {
     //your code here
+    
 }
 public void displayWinningMessage()
 {
@@ -84,6 +85,7 @@ public class MSButton
     {
         clicked = true;
         //your code here
+        if(keyPressed==false&&marked==true){marked=false;clicked=false;}
         if(keyPressed==true){marked=true;}
         else if(bombs.contains(this)){displayLosingMessage();}
         else if(countBombs(r,c)>0){label = "" + countBombs(r,c);}
