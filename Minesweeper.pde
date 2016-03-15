@@ -45,6 +45,13 @@ public boolean isWon()
 public void displayLosingMessage()
 {
     //your code here
+    String LosingMessage = "You Lose";
+    int col = 10;
+    for(int rows=10; rows<10+LosingMessage.length(); rows++ ){
+        for(int Mess=0; Mess<LosingMessage.length(); Mess++){
+         label = "" + LosingMessage[1];
+        }
+    } 
     
 }
 public void displayWinningMessage()
@@ -87,7 +94,13 @@ public class MSButton
         //your code here
         if(keyPressed==false&&marked==true){marked=false;clicked=false;}
         if(keyPressed==true){marked=true;}
-        else if(bombs.contains(this)){displayLosingMessage();}
+        else if(bombs.contains(this)){
+          for(int rows=0; rows<NUM_ROWS; rows++ ){
+            for(int cols=0; cols<NUM_COLS; cols++){
+              buttons[rows][cols].clicked=true;
+            }
+          } 
+        displayLosingMessage();}
         else if(countBombs(r,c)>0){label = "" + countBombs(r,c);}
         else{
           if(isValid(r+1,c) && buttons[r+1][c].isClicked()==false){ buttons[r+1][c].mousePressed();}
