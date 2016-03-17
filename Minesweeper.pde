@@ -46,17 +46,22 @@ public void displayLosingMessage()
 {
     //your code here
     String LosingMessage = "You Lose";
-    int col = 10;
-    for(int rows=10; rows<10+LosingMessage.length(); rows++ ){
-        for(int Mess=0; Mess<LosingMessage.length(); Mess++){
-         label = "" + LosingMessage[1];
-        }
-    } 
+    int Mess= 0;
+      for(int rows=5; rows<10+LosingMessage.length(); rows++ ){
+         buttons[10][rows].setLabel(Character.toString(LosingMessage.charAt(Mess)));
+         Mess++;
+    }
     
 }
 public void displayWinningMessage()
 {
     //your code here
+    String winningMessage = "You Win";
+    int Mess= 0;
+      for(int rows=5; rows<10+winningMessage.length(); rows++ ){
+         buttons[10][rows].setLabel(Character.toString(winningMessage.charAt(Mess)));
+         Mess++;
+    }
 }
 
 public class MSButton
