@@ -97,8 +97,8 @@ public class MSButton
     {
         clicked = true;
         //your code here
-        if(keyPressed==false&&marked==true){marked=false;clicked=false;}
-        if(keyPressed==true){marked=true;}
+        if(mouseButton == LEFT&&marked==true){marked=false;clicked=false;}
+        if(mouseButton == RIGHT){marked=true;}
         else if(bombs.contains(this)){
           for(int rows=0; rows<NUM_ROWS; rows++ ){
             for(int cols=0; cols<NUM_COLS; cols++){
