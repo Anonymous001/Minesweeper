@@ -6,6 +6,7 @@ private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> bombs = new ArrayList <MSButton>(); //ArrayList of just the minesweeper buttons that are mined
 private int bomb = 5;
 private int bombN = 5;
+private int markN = bombN;
 void setup ()
 {
     size(400, 400);
@@ -42,7 +43,7 @@ public void draw ()
 public boolean isWon()
 {
     //your code here
-    if(bombN==0){
+    if(bombN==0 && markN ==0){
       return true; 
     }
     return false;
@@ -104,6 +105,7 @@ public class MSButton
         //your code here
         if (mouseButton == RIGHT&&marked==false) {
           marked = true;
+          markN --;
             if(bombs.contains(this)){
               bombN--; 
             }
@@ -119,6 +121,7 @@ public class MSButton
        } 
        else if (mouseButton == RIGHT&&marked==true) {
         marked=false;
+        markN ++;
         clicked=false;
         if(bombs.contains(this)){
           bombN++;
