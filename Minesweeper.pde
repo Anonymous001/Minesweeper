@@ -102,6 +102,7 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
+        displayLosingMessage();
         //your code here
         if (mouseButton == RIGHT&&marked==false) {
           marked = true;
